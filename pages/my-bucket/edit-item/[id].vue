@@ -10,7 +10,7 @@
           type="date"
           :min="minDate"
           v-model="moment.futureDate"
-          class="border border-[#707070] p-2 w-full rounded"
+          class="border border-[#707070] p-2 w-full rounded appearance-none"
         />
         <p v-if="errors.futureDate" class="text-red-500 text-xs mt-1">
           {{ errors.futureDate }}
@@ -46,7 +46,7 @@
       <div class="w-full flex justify-center mt-4">
         <button
           @click="updateMoment"
-          class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg w-full sm:w-auto flex justify-center items-center text-center"
+          class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg w-full sm:w-auto flex justify-center items-center text-center hover:bg-blue-600 transition duration-300 active:scale-95"
         >
           Update
         </button>
@@ -143,12 +143,6 @@ const updateMoment = async () => {
 
     console.log("Update response:", response.data);
     router.push("/my-bucket");
-    // } catch (error) {
-    //   console.error(
-    //     "Error updating moment:",
-    //     error.response ? error.response.data : error
-    //   );
-    // }
   } catch (error) {
     console.error("Error saving moment:", error.response?.data || error);
     errors.value.futureDate =

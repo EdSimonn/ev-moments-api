@@ -34,7 +34,7 @@
         <div class="flex justify-center mt-8">
           <button
             type="submit"
-            class="px-8 py-3 bg-[#5271FF] text-white rounded-lg w-full sm:w-auto flex justify-center items-center text-center"
+            class="px-8 py-3 bg-[#5271FF] text-white rounded-lg w-full sm:w-auto flex justify-center items-center text-center hover:bg-blue-600 transition duration-300 active:scale-95"
           >
             Login
           </button>

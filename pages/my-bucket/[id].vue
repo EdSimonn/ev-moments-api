@@ -1,6 +1,6 @@
 <template>
   <div class="py-10 md:px-16 px-8">
-    <h1 class="text-3xl font-bold">{{ moment.title }}</h1>
+    <h1 class="text-3xl font-bold break-words overflow-hidden flex-1">{{ moment.title }}</h1>
     <p class="text-blue-500 text-sm mt-1">
       {{ formattedDate(moment.createdAt) }}
     </p>
@@ -14,12 +14,12 @@
     <div class="flex gap-4 mt-6">
       <RouterLink
         :to="`/my-bucket/edit-item/${moment._id}`"
-        class="bg-[#06C3B4] text-white text-sm px-8 py-2 rounded-lg"
+        class="bg-[#06C3B4] hover:bg-[#04A89E]  text-white text-sm px-8 py-2 rounded-lg transition duration-300 active:scale-95"
         >Edit</RouterLink
       >
       <button
         @click="deleteMoment"
-        class="bg-[#C34F06] text-white text-sm px-8 py-2 rounded-lg"
+        class="bg-[#C34F06] hover:bg-[#A84205] text-white text-sm px-8 py-2 rounded-lg transition duration-300 active:scale-95"
       >
         Delete
       </button>

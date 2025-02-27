@@ -9,7 +9,7 @@
       </div>
       <NuxtLink
         to="/my-bucket/add-item"
-        class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg mt-4 sm:mt-0 w-full sm:w-auto flex justify-center items-center text-center"
+        class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg mt-4 sm:mt-0 w-full sm:w-auto flex justify-center items-center text-center hover:bg-blue-600 transition duration-300 active:scale-95"
       >
         Add Item
       </NuxtLink>
@@ -35,7 +35,7 @@
     <div v-if="moments.length > 4" class="flex justify-center my-0 mt-4 sm:my-16">
       <button
         @click="showAll = !showAll"
-        class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg mt-4 sm:mt-0 w-full sm:w-auto flex justify-center items-center text-center"
+        class="bg-blue-500 text-white text-sm px-8 py-3 rounded-lg mt-4 sm:mt-0 w-full sm:w-auto flex justify-center items-center text-center hover:bg-blue-600 transition duration-300 active:scale-95"
       >
         {{ showAll ? "Load Less" : "Load More" }}
       </button>

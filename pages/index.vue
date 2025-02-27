@@ -43,10 +43,6 @@
         <p v-if="errors.general" class="text-red-500 text-sm mt-2">
           {{ errors.general }}
         </p>
-        <!-- <p class="mt-4 text-center text-sm">
-          Don't have an account?
-          <NuxtLink to="/register" class="text-blue-500">Register</NuxtLink>
-        </p> -->
       </form>
     </div>
   </div>

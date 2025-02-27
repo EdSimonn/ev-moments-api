@@ -2,7 +2,9 @@
   <div class="flex justify-center md:justify-start min-h-screen px-8 md:px-16">
     <div class="flex flex-col py-8 w-full max-w-md text-sm">
       <div class="w-full">
-        <label for="date" class="block font-medium mb-1">Date in the future</label>
+        <label for="date" class="block font-medium mb-1"
+          >Date in the future</label
+        >
         <input
           id="date"
           type="date"
@@ -141,17 +143,21 @@ const updateMoment = async () => {
 
     console.log("Update response:", response.data);
     router.push("/my-bucket");
+    // } catch (error) {
+    //   console.error(
+    //     "Error updating moment:",
+    //     error.response ? error.response.data : error
+    //   );
+    // }
   } catch (error) {
-    console.error(
-      "Error updating moment:",
-      error.response ? error.response.data : error
-    );
+    console.error("Error saving moment:", error.response?.data || error);
+    errors.value.futureDate =
+      error.response?.data?.message || "Failed to save moment.";
   }
 };
 
 onMounted(fetchMoment);
 </script>
-
 
 <!-- <template>
   <div class="flex justify-center md:justify-start min-h-screen px-8 md:px-16">

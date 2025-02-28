@@ -4,7 +4,7 @@
     @click="goToMoment"
   >
     <h3 class="font-bold text-lg">{{ title }}</h3>
-    <p class="break-words overflow-hidden flex-1">{{ detail }}</p>
+    <p class="break-words overflow-hidden flex-1">{{ detail.length > 500 ? detail.substring(0, 500) + '...' : detail }}</p>
     <div class="flex justify-between items-center">
       <RouterLink :to="`/my-bucket/${id}`" class="text-[#5271FF]"
         >View Details</RouterLink

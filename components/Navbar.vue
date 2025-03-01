@@ -1,30 +1,36 @@
 <script setup>
 import { useRouter, useRoute } from "vue-router";
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 
 const router = useRouter();
 const route = useRoute();
-
-const authToken = ref(localStorage.getItem("authToken"));
+const authToken = ref(null);
 
 const logout = () => {
-  localStorage.removeItem("authToken");
-  authToken.value = null;
-  router.push("/");
+  if (process.client) {
+    localStorage.removeItem("authToken");
+    authToken.value = null;
+    router.push("/");
+  }
 };
 
+onMounted(() => {
+  if (process.client) {
+    authToken.value = localStorage.getItem("authToken");
+  }
+});
+
+// Watch route changes to refresh authToken
 watch(route, () => {
-  authToken.value = localStorage.getItem("authToken");
+  if (process.client) {
+    authToken.value = localStorage.getItem("authToken");
+  }
 });
 </script>
 
 <template>
   <nav class="bg-teal-700 text-white md:px-16 px-8 py-4 flex justify-between">
-    <NuxtLink
-      v-if="authToken"
-      to="/my-bucket"
-      class="font-bold text-lg"
-    >
+    <NuxtLink v-if="authToken" to="/my-bucket" class="font-bold text-lg">
       Eventful Moments.
     </NuxtLink>
     <span v-else class="font-bold text-lg cursor-not-allowed">

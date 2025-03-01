@@ -142,7 +142,7 @@ const updateMoment = async () => {
     });
 
     console.log("Update response:", response.data);
-    router.push("/my-bucket");
+    router.push(`/my-bucket/${route.params.id}`);
   } catch (error) {
     console.error("Error saving moment:", error.response?.data || error);
     errors.value.futureDate =

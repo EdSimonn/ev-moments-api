@@ -3,8 +3,10 @@
     class="flex flex-col h-full border p-4 space-y-4 shadow-lg hover:bg-[#FFF5A7] transition-all cursor-pointer"
     @click="goToMoment"
   >
-    <h3 class="font-bold text-lg">{{ title }}</h3>
-    <p class="break-words overflow-hidden flex-1">{{ detail.length > 500 ? detail.substring(0, 500) + '...' : detail }}</p>
+    <h3 class="text-xl font-bold">{{ title }}</h3>
+    <p class="leading-loose break-words overflow-hidden flex-1">
+      {{ detail.length > 500 ? detail.substring(0, 500) + "..." : detail }}
+    </p>
     <div class="flex justify-between items-center">
       <RouterLink :to="`/my-bucket/${id}`" class="text-[#5271FF]"
         >View Details</RouterLink

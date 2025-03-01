@@ -8,7 +8,6 @@
     </p>
 
     <div class="mt-4 space-y-4">
-      <!-- <p class="text-[#000000] break-words overflow-hidden flex-1"> -->
         <p class="text-[#000000] break-words overflow-hidden flex-1 whitespace-pre-line">
 
         {{ moment.details }}
